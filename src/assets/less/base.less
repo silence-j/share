@@ -1,0 +1,136 @@
+.clearfix{
+    &::after{
+      clear:both;
+      font-size:0;
+      height:0;
+      display:block;
+      visibility:hidden;
+      content:"";
+      line-height:0
+    }
+    &::before{
+       clear:both;
+       font-size:0;
+       height:0;
+       display:block;
+       visibility:hidden;
+       content:"";
+       line-height:0
+    }
+   }
+.clearfix{
+    zoom:1
+}
+.mt10{
+  margin-top:10px;
+}
+.mt20{
+  margin-top:20px;
+}
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+//页面切换动画
+.page-toggle-enter-active{
+    transition: all 0.2s ease-in 0.25s;
+  }
+  .page-toggle-leave-active{
+    transition: all 0.2s ease-out 0s;
+  }
+  .page-toggle-enter, .page-toggle-leave-to{
+    opacity: 0;
+    padding: 0px;
+  }
+  .mt20{
+      margin-top:20px;
+  }
+//按钮波纹效果
+.ripple {
+  position: relative;
+  //此处不需要设置overflow:hidden,因为after元素需要溢出显示
+}
+.ripple:focus{
+  outline: none;
+}
+
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  //扩大伪类元素4个方向各10px
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  pointer-events: none;
+  background-color:rgba(255, 117, 0, .5);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.ripple:active:after {
+  opacity: .3;
+  //设置初始状态
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0s;
+}
+//操作样式
+.operate-div{
+  text-align: center;
+  width:100%;
+  span{
+    color: @base-color;
+    &:not(:nth-of-type(1)){
+      margin-left:10px;
+    }
+  }
+}
+//点击效果
+.click-active{
+  cursor: pointer;
+  &:hover{
+    text-decoration:underline
+  }
+  &.del{
+    color:#FF0000;
+  }
+  &.base{
+    color:#2e48db;
+  }
+}
+//表单大小
+.row-form_box{
+  width:600px;
+}
+
+/* 搜索样式 */
+.search-form_box{
+  margin-top:20px;
+  .search-form_item{
+      float:left;
+      width:11%;
+      height:40px;
+      &:not(:nth-of-type(1)){
+        margin-left:15px;
+      }
+      .el-select{
+        width:100%;
+      }
+    }
+    .search-form_button{
+      float:left;
+      margin-top:4px;
+      width:200px;
+      margin-left:20px !important;
+      .el-button{
+        width:80px;
+      }
+    }
+}
